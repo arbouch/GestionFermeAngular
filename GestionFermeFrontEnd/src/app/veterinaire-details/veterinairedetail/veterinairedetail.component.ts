@@ -30,16 +30,28 @@ this.service.formData = {
 }
 }
 onSubmit(form:NgForm) {
-  if(this.service.formData.IDVet==0)
-  this.insertRecord(form);
-  else 
+ 
+  console.log("aaaaaaaaaaaaaaa"+this.service.formData.IDVet);
+
+  console.log("aaaaaaaaaaaaaaa"+this.service.formData.nom);
+
+  console.log("aaaaaaaaaaaaaaa"+this.service.formData.prenom);
+
+  console.log("aaaaaaaaaaaaaaa"+this.service.formData.num1);
+  console.log("aaaaaaaaaaaaaaa"+this.service.formData.num2);
+
+  if(this.service.formData.IDVet==0) 
+   
+     this.insertRecord(form);
+  
+    else 
   this.updateRecord(form);
 }
 insertRecord(form:NgForm) {
   this.service.postPvet().subscribe(
     res=>{
       this.resetForm(form);
-       this.service.refreshList();
+     //  this.service.refreshList();
     },
     err => {console.log(err);
     } 
@@ -49,7 +61,7 @@ updateRecord(form:NgForm) {
   this.service.putPvet().subscribe(
     res=>{
       this.resetForm(form);
-       this.service.refreshList();
+  //     this.service.refreshList();
     },
     err => {console.log(err);
     } 
