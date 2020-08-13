@@ -10,10 +10,21 @@ import { VeterinaireDetail  } from './../../shared/veterinaire-detail.model';
 export class VeterinairelistComponent implements OnInit {
 
   constructor(public service : VeterinaireDetailService ) { }
-
+ 
   ngOnInit(): void {
     this.service.refreshList()
 
+  }
+  refrech() {
+    
+      return this.service.refreshList();
+    }
+    
+  search() {
+    this.service.list = this.service.list.filter(res =>  {
+      return res.prenom.toLocaleLowerCase().match(this.service.formData.prenom.toLocaleLowerCase());
+
+    })
   }
   populateForm(pd:VeterinaireDetail){
     this.service.formData=Object.assign({},pd)

@@ -16,6 +16,11 @@ export class VeterinairedetailComponent implements OnInit {
   ngOnInit(): void {
     this.resetForm();
   }
+  search() {
+    this.service.list = this.service.list.filter(res =>  {
+      return res.prenom.toLocaleLowerCase().match(this.service.formData.prenom.toLocaleLowerCase());
+    })
+  }
 resetForm(form?:NgForm) {
 if(form!=null)
   form.resetForm() ;
@@ -29,16 +34,12 @@ this.service.formData = {
 
 }
 }
+refrech() {
+    
+  return this.service.refreshList();
+}
 onSubmit(form:NgForm) {
- 
-  console.log("aaaaaaaaaaaaaaa"+this.service.formData.IDVet);
-
-  console.log("aaaaaaaaaaaaaaa"+this.service.formData.nom);
-
-  console.log("aaaaaaaaaaaaaaa"+this.service.formData.prenom);
-
-  console.log("aaaaaaaaaaaaaaa"+this.service.formData.num1);
-  console.log("aaaaaaaaaaaaaaa"+this.service.formData.num2);
+  
 
   if(this.service.formData.IDVet==0) 
    
@@ -48,20 +49,20 @@ onSubmit(form:NgForm) {
   this.updateRecord(form);
 }
 insertRecord(form:NgForm) {
-  this.service.postPvet().subscribe(
+  this.service.PostVETERINAIRE().subscribe(
     res=>{
       this.resetForm(form);
-     //  this.service.refreshList();
+     this.service.refreshList();
     },
     err => {console.log(err);
     } 
   )
 }
 updateRecord(form:NgForm) {
-  this.service.putPvet().subscribe(
+  this.service.PutVETERINAIRE().subscribe(
     res=>{
       this.resetForm(form);
-  //     this.service.refreshList();
+     this.service.refreshList();
     },
     err => {console.log(err);
     } 

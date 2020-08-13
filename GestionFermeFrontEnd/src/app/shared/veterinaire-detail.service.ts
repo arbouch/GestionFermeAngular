@@ -11,7 +11,7 @@ export class VeterinaireDetailService {
   list : VeterinaireDetail[];
 
   constructor(private http:HttpClient) { }
-  postPvet() {
+  PostVETERINAIRE() {
     console.log(this.formData.IDVet)
     console.log(this.formData.nom)
     console.log(this.formData.prenom)
@@ -20,7 +20,7 @@ export class VeterinaireDetailService {
 
     return  this.http.post(this.root + '/VETERINAIREs',this.formData)
       }
-      putPvet() {
+      PutVETERINAIRE() {
         return  this.http.put(this.root + '/VETERINAIREs/'+this.formData.IDVet,this.formData)
           }
           deletevet(id) {
