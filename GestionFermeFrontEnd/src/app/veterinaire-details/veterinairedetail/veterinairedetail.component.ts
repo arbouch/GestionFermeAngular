@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { VeterinaireDetailService } from './../../shared/veterinaire-detail.service';
 import { NgForm } from '@angular/forms';
-
 @Component({
   selector: 'app-veterinairedetail',
   templateUrl: './veterinairedetail.component.html',

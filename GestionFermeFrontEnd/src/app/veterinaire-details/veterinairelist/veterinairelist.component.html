@@ -1,12 +1,11 @@
  
-<input type="text"  name="firstname" [(ngModel)]="service.formData.prenom"   (input)="search()"/>
+  <input type="text"  name="firstname" [(ngModel)]="service.formData.prenom"    (ngModelChange)="onTextChange($event)" (input)="search()"/> 
  
  
-    <button class="btn btn-succes btn-lg btn-lock"    (button)="refrech()"> annuler recherche </button>
-  
-<table class="table table-hover">
-    <tr *ngFor="let pd of service.list">
-        <td (click)="populateForm(pd)">
+   
+<table class="table table-hover ">
+    <tr *ngFor="let pd of service.list | paginate: {itemsPerPage: 5, currentPage: p } ; " >
+        <td (click)="populateForm(pd) ">
            {{pd.nom}} 
         </td>
         <td (click)="populateForm(pd)"> 
@@ -27,3 +26,4 @@
 </td>
     </tr>
 </table>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>

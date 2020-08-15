@@ -8,7 +8,8 @@ import { VeterinairedetailComponent } from './veterinaire-details/veterinairedet
 import {  HttpClientModule} from "@angular/common/http";
 import { VeterinaireDetailService } from './shared/veterinaire-detail.service';
 import { FormsModule } from '@angular/forms';
-
+import { PipeSearchByModule } from "ngx-pipe-search-by";
+import { NgxPaginationModule } from "ngx-pagination";
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +18,7 @@ import { FormsModule } from '@angular/forms';
     VeterinairedetailComponent,
    ],
   imports: [
-    BrowserModule, FormsModule,HttpClientModule,BrowserAnimationsModule
+    BrowserModule, FormsModule,HttpClientModule,BrowserAnimationsModule,PipeSearchByModule,NgxPaginationModule
   ],
   providers: [VeterinaireDetailService],
   bootstrap: [AppComponent]
