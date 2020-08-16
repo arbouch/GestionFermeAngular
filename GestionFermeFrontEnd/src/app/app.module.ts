@@ -10,6 +10,8 @@ import { VeterinaireDetailService } from './shared/veterinaire-detail.service';
 import { FormsModule } from '@angular/forms';
 import { PipeSearchByModule } from "ngx-pipe-search-by";
 import { NgxPaginationModule } from "ngx-pagination";
+import { ToastrModule } from 'ngx-toastr';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +20,7 @@ import { NgxPaginationModule } from "ngx-pagination";
     VeterinairedetailComponent,
    ],
   imports: [
-    BrowserModule, FormsModule,HttpClientModule,BrowserAnimationsModule,PipeSearchByModule,NgxPaginationModule
+    BrowserModule, FormsModule,HttpClientModule,BrowserAnimationsModule,PipeSearchByModule,NgxPaginationModule, ToastrModule.forRoot()
   ],
   providers: [VeterinaireDetailService],
   bootstrap: [AppComponent]

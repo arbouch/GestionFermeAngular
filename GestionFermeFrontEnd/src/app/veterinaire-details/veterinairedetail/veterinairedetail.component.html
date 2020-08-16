@@ -1,22 +1,30 @@
 <form #form="ngForm" autocomplete="off"  (submit)="onSubmit(form)">
 
     
-    <input type="hidden" name="IDVet"   [value]="service.formData.IDVet"/>
+    <input type="hidden" name="IDVet"   [value]="service.formData.IDVet"  />
 
 <div class="form-group">
-    <input required name="nom" #nom="ngModel" [(ngModel)]="service.formData.nom" placeholder="name" class="form-control">
+    <label>Nom       
+    <input required name="nom" #nom="ngModel" [(ngModel)]="service.formData.nom" placeholder="nom" class="form-control">
+</label>
 </div>
 <div class="form-group">
+    <label>Prenom    
     <input required name="prenom" #prenom="ngModel" [(ngModel)]="service.formData.prenom" placeholder="prenom" class="form-control"  >
- </div>
+</label> 
+</div>
+<div class="form-group">
+    <label>Premiere  Numero     
 
-<div class="form-group">
     <input required type="number" name="num1" #num1="ngModel" [(ngModel)]="service.formData.num1" placeholder="num1" class="form-control">
+</label>
 </div>
 <div class="form-group">
-    <input required  type="number"   name="num2" #num2="ngModel" [(ngModel)]="service.formData.num2" placeholder="num2" class="form-control">
+    <label>Deuxième Numero     
+    <input required  type="number"  placeholder="num2" name="num2" #num2="ngModel" [(ngModel)]="service.formData.num2"  class="form-control">
+</label>
 </div>
 <div class="form-group">
-    <button class="btn btn-succes btn-lg btn-lock" type ="submit" ><i class="fas fa-database"></i> submit  </button>
+    <button class="btn btn-succes btn-lg btn-lock" type ="submit" ><i class="fas fa-database"></i> Ajouter  </button>
 </div>
 </form>

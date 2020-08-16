@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { VeterinaireDetailService } from './../../shared/veterinaire-detail.service';
 import { NgForm } from '@angular/forms';
+import { ToastContainerModule, ToastrService } from 'ngx-toastr';
+
 @Component({
   selector: 'app-veterinairedetail',
   templateUrl: './veterinairedetail.component.html',
@@ -10,7 +12,7 @@ import { NgForm } from '@angular/forms';
 })
 export class VeterinairedetailComponent implements OnInit {
 
-  constructor(public service :VeterinaireDetailService) { }
+  constructor(public service :VeterinaireDetailService, private toast :ToastrService) { }
 
   ngOnInit(): void {
     this.resetForm();
@@ -51,6 +53,7 @@ insertRecord(form:NgForm) {
   this.service.PostVETERINAIRE().subscribe(
     res=>{
       this.resetForm(form);
+      this.toast.success('ajout avec succees',"Ajout Veterinaire");
      this.service.refreshList();
     },
     err => {console.log(err);
@@ -61,6 +64,8 @@ updateRecord(form:NgForm) {
   this.service.PutVETERINAIRE().subscribe(
     res=>{
       this.resetForm(form);
+      this.toast.success('Modification avec succees',"Modification Veterinaire");
+
      this.service.refreshList();
     },
     err => {console.log(err);

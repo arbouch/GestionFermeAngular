@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { VeterinaireDetailService } from './../../shared/veterinaire-detail.service';
 import { VeterinaireDetail  } from './../../shared/veterinaire-detail.model';
+import { ToastContainerModule, ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-veterinairelist',
@@ -10,7 +11,7 @@ import { VeterinaireDetail  } from './../../shared/veterinaire-detail.model';
 export class VeterinairelistComponent implements OnInit {
   p:number=1;
 
-  constructor(public service : VeterinaireDetailService ) { }
+  constructor(public service : VeterinaireDetailService , private toast :ToastrService) { }
  
   ngOnInit(): void {
     this.service.refreshList()
@@ -44,11 +45,11 @@ export class VeterinairelistComponent implements OnInit {
     this.service.formData=Object.assign({},pd)
       }
       onDelete(IDVet ){
-        if(confirm('Are u sure ? ')
+        if(confirm('Etes vous sur de vouloir supprimer ?')
         )
         {
         this.service.deletevet(IDVet).subscribe(res =>  {this.service.refreshList();
-//    this.toast.warning("delete Successfully",'Payment Detail');
+ this.toast.warning("Suppression avec succees",'Suppression Veterinaire');
         } ,
           err=> {
             console.log(err)
