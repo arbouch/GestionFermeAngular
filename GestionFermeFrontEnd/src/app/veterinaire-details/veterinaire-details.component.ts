@@ -11,5 +11,10 @@ export class VeterinaireDetailsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  isMobileMenu() {
+    if ($(window).width() > 991) {
+        return false;
+    }
+    return true;
+}
 }
