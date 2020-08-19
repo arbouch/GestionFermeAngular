@@ -14,6 +14,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { RaceDetailsComponent } from './race-details/race-details.component';
 import { RaceDetailComponent } from './race-details/race-detail/race-detail.component';
 import { RaceDetailListComponent } from './race-details/race-detail-list/race-detail-list.component';
+import {AppRoutingModule} from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { RaceDetailListComponent } from './race-details/race-detail-list/race-de
     RaceDetailListComponent,
    ],
   imports: [
-    BrowserModule, FormsModule,HttpClientModule,BrowserAnimationsModule,PipeSearchByModule,NgxPaginationModule, ToastrModule.forRoot()
+    BrowserModule, FormsModule,HttpClientModule,BrowserAnimationsModule,PipeSearchByModule,NgxPaginationModule, ToastrModule.forRoot(),AppRoutingModule
   ],
   providers: [VeterinaireDetailService],
   bootstrap: [AppComponent]
