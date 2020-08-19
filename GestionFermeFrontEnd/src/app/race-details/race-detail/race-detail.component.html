@@ -1,0 +1,21 @@
+<form #form="ngForm" autocomplete="off"  (submit)="onSubmit(form)" ngNativeValidate>
+
+    
+    <input type="hidden" name="IDRace"   [value]="service.formData.IDRace"  />
+
+<div class="form-group">
+    <label>Designation       
+    <input required name="Designation" #Designation="ngModel" [(ngModel)]="service.formData.Designation" placeholder="Designation" class="form-control">
+</label>
+</div>
+<div class="form-group">
+    <label>Type    
+    <input required name="Type" #Type="ngModel" [(ngModel)]="service.formData.Type" placeholder="Type" class="form-control"  >
+</label> 
+</div>
+ 
+ 
+<div class="form-group">
+    <button class="btn btn-success" type ="submit" >  Ajouter  </button>
+</div>
+</form>
