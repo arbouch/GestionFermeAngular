@@ -7,20 +7,22 @@ import { RaceDetail } from './race-detail.model';
 })
 export class RaceDetailService {
   formData:RaceDetail;
-  list : RaceDetail[];
-
   readonly root ='http://localhost:61347/api';
-
+  list : RaceDetail[];
   constructor(private http:HttpClient) { }
   PostRace() {
-  
-
     return  this.http.post(this.root + '/RACEs',this.formData)
       }
       PutRace() {
-        return  this.http.put(this.root + '/RACEs/'+this.formData.IDRace,this.formData)
+        console.log(this.formData.idRace)
+        console.log(this.formData.Designation)
+        console.log(this.formData.Type)
+         return  this.http.put(this.root + '/RACEs/'+this.formData.idRace,this.formData)
           }
           deleteRace(id) {
+            console.log(this.formData.idRace)
+            console.log(this.formData.Designation)
+            console.log(this.formData.Type)
             return  this.http.delete(this.root + '/RACEs/'+id)
               }
       refreshList()

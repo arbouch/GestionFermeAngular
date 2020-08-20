@@ -44,8 +44,8 @@ export class VeterinairelistComponent implements OnInit {
   populateForm(pd:VeterinaireDetail){
     this.service.formData=Object.assign({},pd)
       }
-      onDelete(IDVet ){
-        if(confirm('Etes vous sur de vouloir supprimer ?')
+      onDelete(IDVet){
+        if(confirm('Etes vous sur de vouloir supprimer ?'+IDVet)
         )
         {
         this.service.deletevet(IDVet).subscribe(res =>  {this.service.refreshList();

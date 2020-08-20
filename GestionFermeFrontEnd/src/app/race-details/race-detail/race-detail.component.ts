@@ -26,7 +26,7 @@ export class RaceDetailComponent implements OnInit {
       form.resetForm() ;
     
     this.service.formData = {
-      IDRace:0,
+      idRace:0,
       Designation:"",
       Type:"",
    
@@ -40,7 +40,7 @@ export class RaceDetailComponent implements OnInit {
     onSubmit(form:NgForm) {
   
 
-      if(this.service.formData.IDRace==0) 
+      if(this.service.formData.idRace==0) 
        
          this.insertRecord(form);
       

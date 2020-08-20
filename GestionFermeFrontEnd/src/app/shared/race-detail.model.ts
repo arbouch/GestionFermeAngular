@@ -1,5 +1,5 @@
 export class RaceDetail {
-    IDRace:number;
+    idRace:number;
     Designation:string;
     Type:string
 

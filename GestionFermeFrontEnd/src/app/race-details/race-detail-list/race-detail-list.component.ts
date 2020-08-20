@@ -43,11 +43,11 @@ search() {
 populateForm(pd:RaceDetail){
   this.service.formData=Object.assign({},pd)
     }
-    onDelete(IDVet ){
-      if(confirm('Etes vous sur de vouloir supprimer ?')
+    onDelete(idRace){
+      if(confirm('Etes vous sur de vouloir supprimer ?'+idRace)
       )
       {
-      this.service.deleteRace(IDVet).subscribe(res =>  {this.service.refreshList();
+      this.service.deleteRace(idRace).subscribe(res =>  {this.service.refreshList();
 this.toast.warning("Suppression avec succees",'Suppression Race');
       } ,
         err=> {
