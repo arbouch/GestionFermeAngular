@@ -15,6 +15,9 @@ import { RaceDetailsComponent } from './race-details/race-details.component';
 import { RaceDetailComponent } from './race-details/race-detail/race-detail.component';
 import { RaceDetailListComponent } from './race-details/race-detail-list/race-detail-list.component';
 import {AppRoutingModule} from './app-routing.module';
+import { FermeDetailsComponent } from './ferme-details/ferme-details.component';
+import { FermeDetailComponent } from './ferme-details/ferme-detail/ferme-detail.component';
+import { FermeListDetailComponent } from './ferme-details/ferme-list-detail/ferme-list-detail.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,9 @@ import {AppRoutingModule} from './app-routing.module';
     RaceDetailsComponent,
     RaceDetailComponent,
     RaceDetailListComponent,
+    FermeDetailsComponent,
+    FermeDetailComponent,
+    FermeListDetailComponent,
    ],
   imports: [
     BrowserModule, FormsModule,HttpClientModule,BrowserAnimationsModule,PipeSearchByModule,NgxPaginationModule, ToastrModule.forRoot(),AppRoutingModule

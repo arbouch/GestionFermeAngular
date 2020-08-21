@@ -1,0 +1,50 @@
+<form #form="ngForm" autocomplete="off"  (submit)="onSubmit(form)" ngNativeValidate>
+
+    
+    <input type="hidden" name="FermeId"   [value]="service.formData.FermeId"  />
+
+<div class="form-group">
+    <label>Nom Ferme       
+    <input required name="nomFerme" #nomFerme="ngModel" [(ngModel)]="service.formData.nomFerme" placeholder="Designation" class="form-control">
+</label>
+</div>
+<div class="form-group">
+    <label>nom Prop    
+    <input required name="nomProp" #nomProp="ngModel" [(ngModel)]="service.formData.nomProp" placeholder="nomProp" class="form-control"  >
+</label> 
+</div>
+<div class="form-group">
+    <label>nom Prop    
+    <input required name="adresse" #adresse="ngModel" [(ngModel)]="service.formData.adresse" placeholder="adresse" class="form-control"  >
+</label> 
+</div>
+<div class="form-group">
+    <label>nom Prop    
+    <input required name="numTelProp" #numTelProp="ngModel" [(ngModel)]="service.formData.numTelProp" placeholder="numTelProp" class="form-control"  >
+</label> 
+</div>
+<div class="form-group">
+    <label>nom Prop    
+    <input required name="gouveroratFerme" #gouveroratFerme="ngModel" [(ngModel)]="service.formData.gouveroratFerme" placeholder="gouveroratFerme" class="form-control"  >
+</label> 
+</div>
+<div class="form-group">
+    <label>delegation    
+    <input required name="delegation" #delegation="ngModel" [(ngModel)]="service.formData.delegation" placeholder="delegation" class="form-control"  >
+</label> 
+</div>
+<div class="form-group">
+    <label>dateAdhesion    
+    <input  required name="dateAdhesion" #dateAdhesion="ngModel" [(ngModel)]="service.formData.dateAdhesion" placeholder="dateAdhesion" class="form-control"  >
+</label> 
+</div>
+<div class="form-group">
+    <label>cinPopr    
+    <input required name="cinPopr" #cinPopr="ngModel" [(ngModel)]="service.formData.cinPopr" placeholder="cinPopr" class="form-control"  >
+</label> 
+</div>
+ 
+<div class="form-group">
+    <button class="btn btn-success" type ="submit" >  Ajouter  </button>
+</div>
+</form>
