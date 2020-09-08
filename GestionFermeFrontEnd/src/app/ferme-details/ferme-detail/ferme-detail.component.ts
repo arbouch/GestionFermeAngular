@@ -34,7 +34,7 @@ export class FermeDetailComponent implements OnInit {
       numTelProp: "",
       gouveroratFerme:"",
       delegation:"",
-      dateAdhesion:this.todayDate,
+      dateAdhesion:"",
       cinPopr:0   
     }
     }
@@ -57,7 +57,7 @@ export class FermeDetailComponent implements OnInit {
       this.service.PostFerme().subscribe(
         res=>{
           this.resetForm(form);
-          this.toast.success('ajout avec succees',"Ajout Race");
+          this.toast.success('ajout avec succees',"Ajout Ferme");
          this.service.refreshList();
         },
         err => {console.log(err);
@@ -68,7 +68,7 @@ export class FermeDetailComponent implements OnInit {
       this.service.PutFerme().subscribe(
         res=>{
           this.resetForm(form);
-          this.toast.success('Modification avec succees',"Modification Race");
+          this.toast.success('Modification avec succees',"Modification Ferme");
     
          this.service.refreshList();
         },

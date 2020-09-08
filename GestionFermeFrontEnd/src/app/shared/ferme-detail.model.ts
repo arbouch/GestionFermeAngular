@@ -6,6 +6,6 @@ export class FermeDetail {
     numTelProp:string;
     gouveroratFerme:string;
     delegation:string;
-    dateAdhesion:Date;
+    dateAdhesion:string;
     cinPopr:number
 }
