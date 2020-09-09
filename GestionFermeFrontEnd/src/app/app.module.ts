@@ -18,6 +18,9 @@ import {AppRoutingModule} from './app-routing.module';
 import { FermeDetailsComponent } from './ferme-details/ferme-details.component';
 import { FermeDetailComponent } from './ferme-details/ferme-detail/ferme-detail.component';
 import { FermeListDetailComponent } from './ferme-details/ferme-list-detail/ferme-list-detail.component';
+import { CategorieDetailsComponent } from './categorie-details/categorie-details.component';
+import { CategorieDetailComponent } from './categorie-details/categorie-detail/categorie-detail.component';
+import { CategorieListDetailComponent } from './categorie-details/categorie-list-detail/categorie-list-detail.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,9 @@ import { FermeListDetailComponent } from './ferme-details/ferme-list-detail/ferm
     FermeDetailsComponent,
     FermeDetailComponent,
     FermeListDetailComponent,
+    CategorieDetailsComponent,
+    CategorieDetailComponent,
+    CategorieListDetailComponent,
    ],
   imports: [
     BrowserModule, FormsModule,HttpClientModule,BrowserAnimationsModule,PipeSearchByModule,NgxPaginationModule, ToastrModule.forRoot(),AppRoutingModule
